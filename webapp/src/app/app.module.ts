@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { EpisodeService } from './services/EpisodesService';
+import { EpisodeTileComponent } from './components/episode-tile/episode-tile.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    EpisodeTileComponent
   ],
   imports: [
     BrowserModule,
