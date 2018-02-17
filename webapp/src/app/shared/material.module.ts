@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 
 import { 
-  MatCardModule
+  MatCardModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   exports: [
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   declarations: []
 })
