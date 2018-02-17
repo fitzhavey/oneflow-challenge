@@ -9,6 +9,9 @@ const dataService = new DataService();
 // if episodes requested
 app.get('/episodes', (request, response) => {
    
+    // Allow connections from local angular app
+    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+
     response.writeHead( 200, {'Content-Type': 'text/json' });
 
     let params = url.parse(request.url, true);
