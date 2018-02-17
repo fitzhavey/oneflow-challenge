@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { EpisodeService } from './services/EpisodesService';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -26,7 +27,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [EpisodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
