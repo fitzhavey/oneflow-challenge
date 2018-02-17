@@ -12,7 +12,8 @@ export class EpisodeTileComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
+    this.episode = Object.assign(this.episode, Episode);
   }
 
 }

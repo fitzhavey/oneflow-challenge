@@ -1,4 +1,6 @@
 
 <div class="episodes">
-    <app-episode-tile *ngFor="let episode of episodes"></app-episode-tile>
+    <app-episode-tile   *ngFor="let episode of episodes | async" 
+                        [episode]="episode">
+    </app-episode-tile>
 </div>
