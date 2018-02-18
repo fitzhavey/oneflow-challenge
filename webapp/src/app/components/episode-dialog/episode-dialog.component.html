@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header>
+    <img mat-card-avatar src="{{ episode.image.medium }}">	
+    <mat-card-title>{{ episode.name }}</mat-card-title>
+    <mat-card-subtitle>Season {{ episode.season }} Episode {{ episode.number }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ episode.image.original }}">
+  <mat-card-content>
+    <div>Aired: {{ episode.airtime }} on {{ episode.airdate }}</div>
+    <div>Runtime: {{ episode.runtime }} minutes</div>
+    <div class="summary" [innerHTML]="episode.summary"></div>
+    <a target="_blank" href="{{ episode.url }}">More Details</a>
+  </mat-card-content>
+</mat-card>

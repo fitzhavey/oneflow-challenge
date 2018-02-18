@@ -1,4 +1,8 @@
-
+<div class="header">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Favorite food" value="Sushi">
+    </mat-form-field>
+</div>
 <div class="episodes">
     <app-episode-tile   *ngFor="let episode of episodes | async" 
                         [episode]="episode">

@@ -4,9 +4,12 @@
   </div>
   <div *ngIf="episode">
     <mat-card-header>
-        <img mat-card-avatar src="{{ episode.image.medium }}">	
-        <mat-card-title>{{ episode.name }}</mat-card-title>
-        <mat-card-subtitle>Season {{ episode.season }} Episode {{ episode.number }}</mat-card-subtitle>
-      </mat-card-header>
+      <img mat-card-avatar src="{{ episode.image.medium }}">	
+      <mat-card-title>{{ episode.name }}</mat-card-title>
+      <mat-card-subtitle>Season {{ episode.season }} Episode {{ episode.number }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-button (click)="openDetailDialog()">Read More</button>
+    </mat-card-actions>
   </div>
 </mat-card>
