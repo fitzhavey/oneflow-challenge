@@ -1,3 +1,4 @@
+/* Defines the Episode blueprint for use in our templates */
 export default class Episode{
     _links: Object;
     airdate: string;

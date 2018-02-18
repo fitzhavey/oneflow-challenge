@@ -1,3 +1,7 @@
+/**
+ * Module to handle the import of necessary parts of the Angular Material module
+ */
+
 import { NgModule } from '@angular/core';
 
 import { 
