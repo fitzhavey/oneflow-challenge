@@ -1,10 +1,10 @@
 <div class="header">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Favorite food" value="Sushi">
+        <input (keyup)="goFilter()" matInput placeholder="Search by Title" [(ngModel)]="filterText">
     </mat-form-field>
 </div>
 <div class="episodes">
-    <app-episode-tile   *ngFor="let episode of episodes | async" 
+    <app-episode-tile   *ngFor="let episode of shownEpisodes" 
                         [episode]="episode">
     </app-episode-tile>
 </div>
