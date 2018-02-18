@@ -1,10 +1,29 @@
 <div class="header">
+
+    <mat-toolbar>
+
+        <span>Silicon Valley Viewer</span>
+
+        <div class="links">
+            <a routerLink="/"><button mat-button>All Seasons</button></a>
+            <a routerLink="/season1"><button mat-button>Season 1</button></a>
+            <a routerLink="/season2"><button mat-button>Season 2</button></a>
+            <a routerLink="/season3"><button mat-button>Season 3</button></a>
+            <a routerLink="/season4"><button mat-button>Season 4</button></a>
+        </div>
+
+    </mat-toolbar>
+
     <mat-form-field class="example-full-width">
         <input (keyup)="goFilter()" matInput placeholder="Search by Title" [(ngModel)]="filterText">
     </mat-form-field>
+
 </div>
+
 <div class="episodes">
+
     <app-episode-tile   *ngFor="let episode of shownEpisodes" 
                         [episode]="episode">
     </app-episode-tile>
+
 </div>

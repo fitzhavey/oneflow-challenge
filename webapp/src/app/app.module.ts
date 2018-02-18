@@ -13,7 +13,7 @@ import { EpisodeDialogComponent } from './components/episode-dialog/episode-dial
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: ':id', redirectTo: '' },
+  { path: ':season', component: LandingComponent },
   { path: '**', redirectTo: '' }
 ];
 

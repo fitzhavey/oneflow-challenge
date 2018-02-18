@@ -8,7 +8,7 @@ import { resolve } from 'q';
 @Injectable()
 export class EpisodeService {
 
-    private API_ENDPOINT = 'http://localhost:8080/episodes';
+    private episodesResourse = 'http://localhost:8080/episodes';
 
     private _episodes: BehaviorSubject<Episode[]>;
     private dataStore: {
@@ -24,12 +24,8 @@ export class EpisodeService {
         return this._episodes.asObservable();
     }
 
-    episodeById(id: number) {
-        return this.dataStore.episodes.find(x => x.id == id);
-    }
-
-    loadAll() {
-        return this.http.get<Episode[]>(this.API_ENDPOINT)
+    loadAllAt(path: string) {
+        return this.http.get<Episode[]>(this.episodesResourse + path)
             .subscribe(data => {
                 this.dataStore.episodes = data;
                 this._episodes.next(Object.assign(Episode, this.dataStore).episodes);

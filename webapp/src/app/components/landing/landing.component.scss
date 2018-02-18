@@ -1,10 +1,30 @@
-.header{
-    padding-top: 50px;
-    width: 50%;
-    margin: auto;
-    mat-form-field{
-        width: 100%;
+header{
+    width: 100%;
+}
+
+mat-toolbar{
+    background: #fc401f;
+    color: white;
+    position: fixed;
+    z-index: 10;
+
+    .links{
+        position: absolute;
+        right: 0;
+        > button{
+            float: right;
+            width: 100px;
+        }
+        a{
+            color: white;
+        }
     }
+}
+
+mat-form-field{
+    padding-top: 100px;
+    width: 50%;
+    margin: 0 25%;
 }
 
 .episodes{
@@ -19,4 +39,12 @@ app-episode-tile{
     margin-bottom: 30px;
     margin-top: 0;
     width: 23%;
+    @media all and (max-width: 1024px){
+        width: 48%;
+        margin: 1%;
+    }
+    @media all and (max-width: 767px){
+        width: 98%;
+        margin: 1%;
+    }
 }
