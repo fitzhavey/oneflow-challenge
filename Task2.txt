@@ -1,0 +1,17 @@
+The sample code appears to invite a user to a shop if they haven't already been invited.
+
+Some errors that I can see are:
+    - line 1 should begin "module.exports" instead of simply "exports"
+    - line 3 should be "params.id" instead of "params.shopId" to get the value
+
+Code that could cause unexpected behaviour:
+    - line 32 sends an error result in response to an Http 200 status
+    - line 24 appears to push the "inviationResponse.body.invitationId" only if it's already in the array
+
+Ways in which the sample could be refactored:
+    - line 13 appears to update a field which was used to query which seems unnecessary.
+    - line 18 has the beginning of a nested function that is difficult to follow and could use functions defined elsewhere for readability and easier testing
+    - errors seem to be send inconsitantely as either "res.status(XXX).send(..)" [line 21] or "res.status.(XXX).json(..)", this could cause confusion
+
+Along with refactoring the code in the above way it would be useful to probe the functions with console logs to see exactly which resources are being reused. 
+It would also help to ensure each code block is clearly seperated with one purpose per block to mimising time spent bugfixing.

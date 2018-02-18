@@ -13,7 +13,7 @@ app.get('/episodes', (request, response) => {
     response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     response.writeHead( 200, {'Content-Type': 'text/json' });
-
+    console.log(request.params);
     let params = url.parse(request.url, true);
     
     // if there is a season parameter, return appropriately filtered results
