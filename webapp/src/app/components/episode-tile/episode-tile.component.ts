@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import Episode from '../../models/Episode';
 import { EpisodeDialogComponent } from '../episode-dialog/episode-dialog.component';
@@ -8,20 +8,19 @@ import { EpisodeDialogComponent } from '../episode-dialog/episode-dialog.compone
   templateUrl: './episode-tile.component.html',
   styleUrls: ['./episode-tile.component.scss']
 })
-export class EpisodeTileComponent implements OnInit {
+export class EpisodeTileComponent{
 
+  // allows an episode to be passed to this tile as a property
   @Input() episode: Episode;
 
+  // include the injectable matdialog to let this component open a dialog
   constructor(
     private dialog: MatDialog
   ) { }
 
-  ngOnInit() { 
-    this.episode = Object.assign(this.episode, Episode);
-  }
-
+  // open the dialog
   openDetailDialog(){
-    let dialogRef = this.dialog.open(EpisodeDialogComponent, { width: '450px', data: this.episode });
+    this.dialog.open(EpisodeDialogComponent, { width: '450px', data: this.episode });
   }
 
 }

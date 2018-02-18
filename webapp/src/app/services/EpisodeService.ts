@@ -32,7 +32,7 @@ export class EpisodeService {
         return this.http.get<Episode[]>(this.API_ENDPOINT)
             .subscribe(data => {
                 this.dataStore.episodes = data;
-                this._episodes.next(Object.assign({}, this.dataStore).episodes);
+                this._episodes.next(Object.assign(Episode, this.dataStore).episodes);
                 console.log("Loaded episodes as:");
                 console.log(this.episodes);
             }, error => {

@@ -10,17 +10,18 @@ import Episode from '../../models/Episode';
 })
 export class EpisodeDialogComponent implements OnInit {
 
-  private episode: Episode;  
+  // stores the data for the shown episode
+  private episode: Episode;
 
+  // include injectables MatDialogRef and MAT_DIALOG_DATA to allow episode obkject to be passed ins 
   constructor(
     private dialogRef: MatDialogRef<EpisodeDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-
   ) { }
 
+  
   ngOnInit() {
     this.episode = this.data;
-    console.log(this.episode);
   }
 
 }

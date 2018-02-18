@@ -16,6 +16,7 @@ export class LandingComponent implements OnInit {
   private episodes: Episode[];
   private shownEpisodes: Episode[];
 
+  // 
   constructor(
     private episodeService: EpisodeService,
     private route: ActivatedRoute
@@ -34,10 +35,8 @@ export class LandingComponent implements OnInit {
       this.shownEpisodes = this.episodes;
       return;
     }
-    this.filterText = this.filterText.toLowerCase();
     this.shownEpisodes = this.episodes.filter(episode => {
-      let name = episode.name.toLowerCase();
-      return name.search(this.filterText) > -1;
+      return episode.name.toLowerCase().search(this.filterText.toLowerCase()) > -1;
     });
   }
 
