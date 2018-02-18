@@ -39,12 +39,3 @@ module.exports.inviteUser = function (req, res) {
             res.json(invitationResponse);
         });
 }
-
-let req = { body: " ",
-            params: {shopId: 1}
-        }
-let res = { body: "" }
-let superagent = {}
-superagent.post = function(){ return {send: function(){},
-                                       end: function(){}} };
-module.exports.inviteUser(req, res);
